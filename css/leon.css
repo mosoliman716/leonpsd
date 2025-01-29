@@ -1,0 +1,400 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+:root{
+    --maincolor1: #e2f3f4;
+    --maincolor2: #6dc7d1;
+}
+body{
+  font-family: "Work Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+.parent{
+    background-color: #eee;
+}
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 600px;
+}
+/* very tiny*/
+@media (min-width: 360px){
+    .container{
+        width: 300px;
+    }
+    .about-flex{
+        width: 300px;
+    }
+}
+/*tiny*/
+@media (min-width: 436px){
+    .container{
+        width: 400px;
+    }
+}
+/*very small*/
+@media (min-width: 576px){
+    .container{
+        width: 540px;
+    }
+}
+/*small*/
+@media (min-width: 768px){
+    .container{
+        width: 750px;
+    }
+}/*medium*/
+@media (min-width: 992px){
+    .container{
+        width: 970px;
+    }
+}
+/*large*/
+@media (min-width: 1200px){
+    .container{
+        width: 1170px;
+    }
+}
+/*end global rules*/
+/*start header rules*/
+.header{
+    padding: 20px;
+    background-color: var(--maincolor1);
+}
+.header .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo{
+    width: 60px;
+}
+.header .links{
+    position: relative;
+}
+.header .links .icon{
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+.header .links .icon span{
+    background-color: #333;
+    margin-bottom: 5px;
+    height: 2px;
+}
+.header .links .icon span:nth-child(1){
+    width: 100%;
+}
+.header .links .icon span:nth-child(2){
+    width: 100%;
+}
+.header .links .icon span:nth-child(3){
+    width: 100%;
+}
+.header .links ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f6f6f6;
+    position: absolute;
+    right: 0;
+    min-width: 200px;
+    top: calc(100% + 15px);
+    display: none;
+    z-index: 1;
+}
+.header .links ul::before{
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
+}
+.header .links:hover ul{
+    display: block;
+}
+.header .links ul li a{
+    display: block;
+    padding: 15px;
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+.header .links ul li a:hover{
+    padding-left: 25px;
+}
+.header .links ul li:not(:last-child){
+    border-bottom: 1px solid #ddd;
+}
+/*end header rul
+/*start landing rules*/
+.landing{
+    background-size: cover;
+    height: calc(100vh - 64px);
+    position: relative;
+    background-color: var(--maincolor2);
+}
+.landing .intro-text{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+}
+.landing .intro-text h1{
+    font-size: 50px;
+    color:var(--maincolor1);
+    margin: 0;
+    font-weight: bold;
+}
+.landing .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+/*end landing rules*/
+/*feutears rules*/
+.features{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--maincolor1);
+}
+.features .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.features .feat{
+    text-align: center;
+    padding: 20px;
+}
+.features .feat i{
+    color: var(--maincolor2);
+}
+.features .feat h3{
+    font-weight: 800;
+    margin: 30px 0;
+}
+.features .feat p{
+    line-height: 1.6;
+    color: #777;
+    font-size: 17px;
+}
+/*end features rules*/
+/*start services rules*/
+.services{
+    background-color: var(--maincolor1);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+.services .intro-text{
+    margin: 0 auto;
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+.services .intro-text h2{
+    font-size: 50px;
+    color:var(--maincolor2);
+    margin: 10px;
+    font-weight: bold;
+}
+.services .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+.services .services-grid{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+       "s1 s2 "
+       "s3 s4 ";
+    gap: 20px;
+    padding-top: 60px;
+    margin-top: 60px;
+}
+.services .service1{
+    grid-area: s1;
+}
+.services .service2{
+    grid-area: s2;
+}
+.services .service3{
+    grid-area: s3;
+}
+.services .service4{
+    grid-area: s4;
+}
+.service1 > i, .service2 > i, .service3 > i, .service4 > i{
+    color: var(--maincolor2);
+    font-size: 30px;
+}
+/*end services rules*/
+/*start portofolio rules*/
+.portfolio{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--maincolor1);
+}
+.portfolio .intro-text{
+    margin: 0 auto;
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+.portfolio .intro-text h2{
+    font-size: 50px;
+    color:var(--maincolor2);
+    margin: 10px;
+    font-weight: bold;
+}
+.portfolio .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+.portfolio .portfolio-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+.portfolio-grid img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.portfolio-grid h4, .portfolio-grid p{
+    padding: 10px;
+}
+.portfolio-grid h4{
+    color: var(--maincolor2);
+    font-size: 20px;
+}
+.portfolio1, .portfolio2, .portfolio3{
+    border: 5px solid var(--maincolor2);
+    border-radius: 10px;
+}
+/*end portofolio rules*/
+/*start about rules*/
+.about{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--maincolor1);
+}
+.about .intro-text{
+    margin: 0 auto;
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+.about .intro-text h2{
+    font-size: 50px;
+    color:var(--maincolor2);
+    margin: 10px;
+    font-weight: bold;
+}
+.about .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+  
+.text{
+    position: relative;
+    margin: 60px auto;
+}
+.text > p{
+    padding-left: 30%;
+    padding-right: 30%;
+    font-weight: 300;
+    line-height: 1.8;
+}
+hr{
+    width: 50%;
+    border: 2px solid var(--maincolor2);
+}
+.vase{
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+}
+/* end about rules*/
+/* start contact rules*/
+.contact{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: var(--maincolor1);
+}
+.contact .intro-text{
+    margin: 0 auto;
+    text-align: center;
+    width: 320px;
+    max-width: 100%;
+    margin-bottom: 60px;
+}
+.contact .intro-text h2{
+    font-size: 50px;
+    color:var(--maincolor2);
+    margin: 10px;
+    font-weight: bold;
+}
+.contact .intro-text p{
+    font-size: 20px;
+    line-height: 1.8;
+}
+.main-text{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.main-text p{
+    font-size: 20px;
+    font-weight: bold;
+}
+.main-text a{
+    font-size: 30px;
+    color: var(--maincolor2);
+    font-weight: 800;
+}
+.social{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+.social i{
+    margin-left: 20px;
+}
+/*end contact*/
+/*start footer*/
+.footer{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: var(--maincolor2);
+    display: flex;
+    justify-content: center;
+}
+.footer p{
+    color: var(--maincolor1);
+    font-weight: bold;
+    font-size: 30px;
+}
+.footer p a{
+    color: limegreen;
+}
